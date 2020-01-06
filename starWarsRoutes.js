@@ -31,14 +31,14 @@ var darthmaul = {
 
 // Routes
 // ===========================================================
-
+/////////////////Explain how this works
 app.get('/api/:characters?', function(req, res){
 
   var chosen = req.params.characters;
   console.log(chosen)
   
 })
-
+//////////////////////////////////////////////////
 
 app.get("/", function(req, res) {
   res.send("Welcome to the Star Wars Page!");
@@ -59,6 +59,17 @@ app.get("/darthmaul", function(req, res) {
 // YOUR CODE GOES HERE
 //
 //
+
+// Create New Characters - takes in JSON input
+app.post("/api/characters", function(req, res) {
+  var newCharacter = req.body;
+
+  console.log(newCharacter);
+
+  characters.push(newCharacter);
+
+  res.json(newCharacter);
+});
 
 // Listener
 // ===========================================================
